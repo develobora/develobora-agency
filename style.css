@@ -1,0 +1,1250 @@
+/* Definicja przydatnych poczatkowych klas dla calego body */
+body
+{
+	margin: 0;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+body img
+{
+	border: 0;
+}
+/* funkcja opóźniania animacji - transition */
+a, span, strong, :before, :after,button,
+body nav.menu ul, 
+#ciacho
+ {
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+a {
+	text-decoration: none;
+}
+body .center
+{
+	max-width: 1150px;
+	width: 96%; /* stricte pod katem responsywnosci */
+	margin: 0 auto;
+	padding: 0 2%;
+}
+body .left
+{
+	float: left;
+}
+body .right
+{
+	float: right;
+}
+body .alignRight
+{
+	text-align: right;
+}
+body .alignCenter
+{
+	text-align: center;
+}
+body .alignLeft
+{
+	text-align: left;
+}
+
+/***********************--[ Top-Site ]--***********************/
+body > div.topSite
+{
+	overflow: hidden;
+	padding-top: 40px;
+}
+body > div.topSite > .logo
+{
+	width: 20%;
+}
+body > div.topSite > .logo a
+{
+	color: #505050;
+}
+body #logo {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2em;
+	color: #505050;
+	font-weight: 700;
+	line-height: 21px;
+}
+/* skalowanie loga podczas responsywnosci */
+body > div.topSite > .logo img {
+	width: auto;
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}	
+
+body > div.topSite > .contact
+{
+	width: 77%;
+	text-align: right;
+}
+
+body > div.topSite > .contact .top .item	/* kowertuje na elementy liniowe i dodaje padding od gory na 10px */
+{
+	display: inline-block;
+	vertical-align: middle;	/* dziala tylko dla elementow liniowych, wyrownuje bloki do gory/srodka */
+	padding: 13px 0;
+	text-align: left;
+}
+
+body > div.topSite > .contact .top .item a:hover
+{
+	color: #d71440;
+}
+
+body > div.topSite > .contact .top .item:before
+{
+	content:""; 
+	width: 20px;
+	height: 21px; 
+	display: inline-block; 
+	vertical-align: middle; 
+	margin-right: 12px; 
+	background: url(../images/contact/adres.png) no-repeat center;
+}
+
+body > div.topSite > .contact .top .item.phone:before
+{
+	background: url(../images/contact/phone.png) no-repeat center;
+}
+
+body > div.topSite > .contact .top .item.mail:before
+{
+	background: url(../images/contact/mail.png) no-repeat center;
+}
+
+body > div.topSite > .contact .top .item span
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+body > div.topSite > .contact .top .item + .item 
+{
+	margin-left: 25px;
+	padding-left: 25px;
+	border-left: 1px solid #f0f0f0;
+	
+}
+
+body > div.topSite > .contact .top .item a
+{
+	color: #272727;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+body > div.topSite > .contact .top .item strong
+{
+	display: block;
+}
+
+body > div.topSite > .contact .top .item:last-child 
+{
+	padding: 3px 0 3px 25px;
+}
+
+body > div.topSite > .contact .top:after{
+	content: "";
+	width: 70%;
+	max-width: 580px;
+	height: 1px;
+	display: inline-block;
+	background: #f0f0f0;
+	margin: 25px 0;
+}
+
+/***********************--[ Nav-Menu ]--***********************/
+body > div.topSite > .contact nav.menu > ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+body > div.topSite > .contact .menu > ul > li
+{
+	display: inline-block;
+}
+
+body > div.topSite > .contact .menu > ul > li + li
+{
+	margin-left: 50px; 
+}
+
+body > div.topSite > .contact .menu > ul > li > a
+{
+	text-decoration: none;
+	color: #1d1d1d;
+	font: 400 italic 16px Alegreya Sans;
+}
+
+body > div.topSite > .contact .menu > ul > li > a:hover
+{
+	color: #d71440;
+}
+
+/* tworzenie kreski pod elementami menu */
+body > div.topSite > .contact .menu > ul > li > a:after
+{
+	background: #5e5e5e;
+	height:  2px;
+	width: 0;
+	content: "";
+	display: block;
+	margin: 8px auto 0; 
+}
+
+/* po najechaniu na element menu after zmieni szerokosc tworzac animacje / wywołanie kreski  */
+body > div.topSite > .contact .menu > ul > li > a:hover:after
+{
+	width: 18px;
+}
+
+/* generowanie pseudo-elementu, wczytanie w nim strzalki do oferty */
+body > div.topSite > .contact .menu > ul > li:nth-child(2)  > a:after
+{
+	content: "";
+	width: 9px;
+	height: 5px;
+	display: inline-block;
+	background: url(../images/lang/button-lang.png) no-repeat center;
+	vertical-align: middle;
+	margin: -2px 0 0 5px;
+}
+
+/* klasa activ obraca strzalke w momencie naciśnięcia przycisku i odwraca ją po ponownym kliknięciu */
+body > div.topSite > .contact .menu > ul > li:nth-child(2).active a:after {
+	-moz-transform: rotate(-180deg);
+	-webkit-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+	/* WYSUWANE MENU */
+	
+body > div.topSite > .contact .menu ul ul
+{
+	position: absolute;	
+	background: #d71440;
+	min-width: 190px;
+	list-style: none; 
+	text-align: left;
+	opacity: 0;	
+	max-height: 0;
+	padding: 0;
+	z-index: 1000;
+}
+
+/*####### uaktywnianie wysuwanego menu poprzez dodatkową klasę .active z jQuery, kosztem wyłączenia hovera ######*/
+body > div.topSite > .contact .menu ul li.active ul {	
+	margin-top: 13px;
+	padding: 8px 0;
+	opacity: 1;
+	max-height: 2000px;
+	z-index: 1000;
+}
+
+body > div.topSite > .contact .menu ul li.active ul li {
+	max-height: 120px;
+}
+
+body > div.topSite > .contact .menu ul li.active ul li a {
+	font-size: 15px;
+	padding: 10px 0;
+}
+
+body > div.topSite > .contact .menu ul ul li
+{
+	max-height: 0px;
+}
+
+body > div.topSite > .contact .menu ul ul li a
+{
+	display: block; 
+	color: #fff;
+	text-decoration: none;
+	font-size: 0;
+}
+
+/* generowanie kropek na bazie pseudo elementów */
+body > div.topSite > .contact .menu ul ul li a:before
+{
+	content: "";
+	background: #fff;
+	width:2px;
+	height:2px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 11px 0 15px; 
+}
+
+body > div.topSite > .contact .menu ul ul li a:hover
+{
+	background: #ba1036;
+}
+
+/* dziubek */
+body > div.topSite > .contact .menu ul ul:before
+{
+	content: "";
+	width: 6px;
+	height: 6px;
+	display: block;
+	background: url(../images/menu/traingle.png) no-repeat center;
+	position: absolute;
+	margin-top: -14px;
+}
+
+/***********************--[ Slider ]--***********************/
+
+body div.slider
+{
+	background: url(../images/slider/1.jpg) no-repeat center top; 
+	padding: 130px 0 110px;
+	height: 210px;
+	margin-top: 35px;
+}
+
+body div.slider h3
+{
+	color: #ffcb08;
+	margin: 0 auto; 
+	font-size: 48px;
+	text-transform: uppercase;	
+	max-width: 670px;	
+}
+
+body div.slider h3 span	
+{	
+	display: block;	
+	height: 57px;
+	overflow: hidden;	
+}
+
+body div.slider h3:after,
+body > div.testimonials .container strong:before
+{
+	width: 56px;
+	height: 5px;
+	margin: 20px auto;
+	display: block;
+	background: #fff;
+	content: "";
+}
+
+body div.slider p
+{
+	max-width: 640px;	
+	color: #fff;
+	font-size: 16px;
+	height: 75px;
+	margin: 0 auto;
+	line-height: 24px;	
+	overflow: hidden;	
+}
+
+body div.slider a,
+body > div.contactform .submitElement button,
+body > div.aboutus .center .right .link a{
+	display: block;	
+	color: #1c1c1c;
+	background: #ffcb08;
+	width: 150px;
+	margin: 25px auto 0;
+	text-decoration: none;
+	font: 700 16px Alegreya Sans;
+	padding: 15px 0;
+}
+
+body div.slider a:hover
+{
+	    background: rgba(255,203,8,0.8);
+}
+
+
+/***********************--[ Offer + line of homepage ]--***********************/
+
+body h2.headerTopElement
+{
+	color: #505050;
+	margin: 70px auto 50px; 
+	font: 400 33px Alegreya Sans;
+}
+
+/* paski obok oferty */	
+body h2.headerTopElement:before,		
+body h2.headerTopElement:after,
+body > div.offer ul li a span:after,
+body > div.offer ul li a span:before,
+body h2.headerTopElement.violetHeader:before,
+body h2.headerTopElement.violetHeader:after{
+	width: 56px;
+	height: 2px;
+	display: inline-block;
+	margin: 0 32px; 
+	background: #ffcb08;
+	content: "";
+	vertical-align: middle;
+}	
+/* paski do formularza kontaktowego */
+body h2.headerTopElement.redHeader:before,
+body h2.headerTopElement.redHeader:after
+{
+	background: #d71440;
+}
+
+body h2.headerTopElement.violetHeader:before,
+body h2.headerTopElement.violetHeader:after{
+	background: #772284;
+}
+
+/* paski do zdjęcia */
+body h2.headerTopElement.whiteHeader:before,
+body h2.headerTopElement.whiteHeader:after{
+	background: #ffffff;
+}
+/* napis na zdjeciu */
+body h2.headerTopElement.whiteHeader{
+	color: #ffffff;
+}
+
+body > div.offer ul
+{
+	margin: 0;	
+	padding: 0;	
+}
+
+body > div.offer ul li
+{
+	width: 30%;
+	display: inline-block;
+	margin: 0 0 20px;
+}
+
+body > div.offer ul li:nth-child(3n+2)	
+{
+	margin: 0 3% 20px;
+}
+
+body > div.offer ul li a
+{
+	display: block;
+	text-decoration: none;
+	color: #5f5f5f;
+	padding: 25px 0;
+}
+
+body > div.offer ul li a img
+{
+	display: block;
+	max-width: 100%;	
+	width: auto;	
+	height: auto;	
+	margin: 0 auto 29px;
+}
+
+body > div.offer ul li a span
+{
+	display: block;
+	font-size: 18px;
+	position: relative;	
+}
+
+body > div.offer ul li a span:after,		
+body > div.offer ul li a span:before
+{
+	display: block;
+	margin: 20px auto 0;
+	background: #aaaaaa;
+}
+
+body > div.offer ul li a span:before {
+	width: 0;
+	background: #ffcb08; 
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+}
+
+/* rozwijanie pomarańczowej kreski po najechaniu */
+body > div.offer ul li a:hover span:before		
+{
+	width: 56px;
+}
+
+body > div.offer ul li a:hover
+{
+	background: #f6f6f6;
+}
+
+
+/***********************--[ Form ]--***********************/
+body > div.contactform form,
+body > div.contactform form .parentRow
+{
+	overflow: hidden;	
+}
+
+body > div.contactform form > .left .left,
+body > div.contactform form > .left .right
+{
+	width: 37%;	
+}
+
+body > div.contactform form .left,
+body > div.contactform form .right
+{
+	width: 47%;	
+}
+
+body > div.contactform form > .left .text p 
+{
+	margin: 0;
+	color: #747474;
+	font-size: 16px;
+}
+
+body > div.contactform form > .left .text p strong
+{
+	color: #111111;
+	font-size: 18px;
+	display: block; 
+	margin-bottom: 13px;
+}
+
+body > div.contactform form .row{
+	margin-top: 35px;	
+}
+
+body > div.contactform form input,
+body > div.contactform form textarea{
+	display: block;
+	width: 90%;
+	padding: 20px 5%;
+	border: 0;
+	font: 15px Alegreya Sans;
+	color: #747474;
+	box-shadow: inset 0px 0px 1px 1px #d1d1d1;	
+	outline: none;
+	resize: none;
+	
+}
+
+body > div.contactform .submitElement button,
+body > div.aboutus .center .right .link a{
+	background: #d71440;    
+	border: 0;
+	color: #ffffff;
+	display: inline-block;
+	cursor: pointer;
+}
+
+body > div.contactform .submitElement button:hover{
+	 background: rgba(215,20,64,0.8);
+	 cursor: pointer;
+}
+
+body > div.contactform .submitElement p{
+	display: inline-block;
+	margin-right: 35px;
+	font-size: 13px;
+	color: #3e3e3e;
+	vertical-align: middle;
+}	
+
+body > div.contactform textarea{
+	height: 201px;
+}
+
+body > div.contactform .submitElement p span{
+	color: #d71440;
+}
+
+
+/***********************--[ About-Us ]--***********************/
+
+body > div.aboutus{
+	background: #2a2a2a;
+	padding: 20px 0;
+	margin-top: 78px;
+}
+
+body > div.aboutus > .center{
+	overflow: hidden;	
+}
+
+
+body > div.aboutus > .center .left{
+	width: 40%;	
+	position: relative; 
+}
+
+body > div.aboutus > .center .right{
+	width: 55%;
+	color: #d8d8d8;
+}	
+
+body > div.aboutus .center .left .image{
+	background: url(../images/aboutus/image1.jpg) no-repeat center;
+	background-size: cover;
+	min-height: 360px;
+	position: relative;
+}
+
+body > div.aboutus .center .left:before,
+body > div.aboutus .center h2.headerTopElement.whiteHeader,
+body > div.aboutus .center .left .image:before,
+body > div.aboutus .center .left .image:after{
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+body > div.aboutus .center h2.headerTopElement.whiteHeader{
+	top: 45%;
+	margin: 0;
+	z-index: 2;
+}
+
+body > div.aboutus .center .left .image:before,
+body > div.aboutus .center .left .image:after{
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	content: "";
+	background: rgba(162, 192, 47, 0.8);
+}
+
+body > div.aboutus .center .left .image:after{
+	top: inherit;
+	background: rgba(150, 189, 0, 0.62);
+	height: 0;
+}
+
+body > div.aboutus .center .left:hover .image:after{
+	height: 100%;
+}
+
+body > div.aboutus .center .left:before{
+	content: "";
+	right: 3px;
+	top: 3px;
+	left: inherit;
+	height: 17px;
+	width: 17px;
+	z-index: 3;
+	background: url(../images/aboutus/triangle.png) no-repeat center;
+}
+
+body > div.aboutus > .center .right h3{
+	margin: 14px 0;
+	color: #a2c02f;
+	font-size: 20px;
+}
+
+body > div.aboutus .center .right p{
+	font-size: 16px;
+	margin: 0 auto;
+	line-height: 1.8em;
+}
+
+body > div.aboutus .center .right p + p{
+	margin-top: 15px;
+}
+
+body > div.aboutus .center .right p strong{
+	color: #fff;
+}
+
+body > div.aboutus .center .right ul{
+	margin: 7px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+body > div.aboutus .center .right ul li{
+	font: 400 italic 16px Alegreya Sans;
+}
+
+body > div.aboutus .center .right ul li + li{
+	margin-top: 15px;
+}
+
+body > div.aboutus .center .right ul li:before{
+	margin: 0 12px 0 8px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	display: inline-block;
+	vertical-align: middle;
+	background: #a2c02f;
+}
+
+body > div.aboutus .center .right .link{
+	margin-top: 3px;
+}
+
+body > div.aboutus .center .right .link a{
+	background: #171717;
+	margin: 0;
+}
+
+body > div.aboutus .center .right .link a:hover{
+	opacity: 0.8;
+}
+
+
+/***********************--[ Testimonials ]--***********************/
+
+body > div.testimonials .container{
+	margin: 0 auto 0;
+	position: relative;
+	max-width: 785px;
+	padding: 20px 0;
+}
+
+body > div.testimonials .container:before,	
+body > div.testimonials .container:after{
+	content: "";
+	width: 104px;
+	height: 81px;
+	background: url(../images/logotypes/hint.png) no-repeat center;
+	position: absolute;
+	z-index:0;	
+	left: 0;
+	top: 0;
+}
+
+body > div.testimonials .container:after{
+	left: inherit;
+	top: inherit;
+	right: 0;
+	bottom: 0px;
+}
+
+body > div.testimonials .container p{
+	font: 400 italic 16px Alegreya Sans;
+	line-height: 32px;
+	color: #6a6a6a;
+	position: relative;
+	z-index:1;
+	max-width: 740px;
+	margin: 0 auto;
+	overflow: hidden;		
+	height: 130px;
+}
+
+body > div.testimonials .container strong{
+	color: #2a2a2a;
+	display:block;
+	position: relative;		
+	z-index: 1;
+}
+
+body > div.testimonials .container strong:before{
+	background: #dadada;
+	height: 2px;
+	margin: 23px auto;
+	display: block;
+}
+
+
+/***********************--[ Footer ]--***********************/
+
+body > div.footer{
+	padding: 25px 0;
+	background: #39bac7;
+	margin-top: 70px;
+	position: relative;
+}
+
+body > div.footer .center{
+	overflow: hidden;	
+}
+
+
+body > div.footer .center p{
+	color: #fff;
+	margin: 0;
+	font-size: 14px;
+}
+
+body > div.footer .center #logo {
+	font-size: 1.8em;
+	font-weight: 400;
+	color: #fff;
+}
+
+
+/***********************--[ Mobile-Menu ]--***********************/
+
+body nav.menu > a.mobileMenu {
+	display: none;
+	background: #d71440;
+	text-decoration: none;
+	padding: 16px 0;
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+	position: relative;
+	z-index: 2;
+}
+
+/* wychodzące tło po naciśnieciu menu */
+body nav.menu > a.mobileMenu:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 0;
+	top: 0;	
+	bottom: 0;
+	background: #eeba07;
+	display: inline-block;
+	z-index: -1;
+}
+
+/* tworzenie krzyżyka i znaczka menu na pseudoelementach */
+body nav.menu > a.mobileMenu span,
+body nav.menu > a.mobileMenu span:before,
+body nav.menu > a.mobileMenu span:after {
+	margin-left: 15px;
+	position: relative;
+	width: 35px;
+	height: 3px;
+	background: #fff;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+body nav.menu > a.mobileMenu span:before,
+body nav.menu > a.mobileMenu span:after {
+	content: "";
+	margin-left: 0;	
+	left: 0;
+	position: absolute;
+
+}
+body nav.menu > a.mobileMenu span:before {
+	margin-top: -10px;
+}
+body nav.menu > a.mobileMenu span:after {
+	margin-top: 10px;
+}
+
+
+/***********************--[ Responsyw ]--***********************/
+
+@media all and (max-width: 830px) {
+	body > div.topSite > .logo {
+		float: none;	
+		width: auto;
+	}
+	body > div.topSite > .logo img {
+		margin: 0 auto;	
+	}
+	body > div.topSite > .contact {
+		width: 100%;
+		text-align: center;
+		padding-top: 30px;
+		margin-top: 30px;
+		border-top: 1px solid #dedede;
+		float: none;
+	}
+}
+@media all and (max-width: 590px) {
+	body > div.topSite > .contact .top .item.mail,
+	body > div.topSite > .contact .menu > ul > li > a:after,
+	body > div.topSite > .contact .menu ul li.active ul li a:before,
+	body nav.menu > ul {
+		display: none;
+	}
+	/* mobileMenu */
+	body nav.menu a.mobileMenu,
+	body nav.menu.active > ul,
+	body > div.topSite > .contact .menu > ul > li,
+	body > div.topSite > .contact .menu > ul li a,
+	body > div.topSite > .contact .menu ul ul {
+		display: block;
+	}
+	
+	body nav.menu.active > ul {
+		opacity: 0;
+	}
+	body nav.menu.ekstraactive > ul {
+		opacity: 1;
+	}
+	body nav.menu > ul {
+		position: absolute;
+		z-index: 2;
+		width: 96%;
+		background: #2b2b2b; /*#464646;*/
+		border-bottom: 2px solid #f1f1f1;
+		border-top: 2px solid #3c3c3c;
+	}
+	
+	body > div.topSite > .contact .menu > ul li,	
+	body > div.topSite > .contact .menu > ul li+li {
+		margin: 0 0 0;
+	}
+	
+	body > div.topSite > .contact .menu > ul li a {
+		color: #f7dee2;
+		padding: 25px 0;
+		font-size: 16px;
+	}
+	body > div.topSite > .contact .menu > ul > li {
+		display: block;
+		background: #2b2b2b;
+		text-align: center;
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	body > div.topSite > .contact .menu ul ul:before {
+		display: none;
+	}
+	
+	body > div.topSite > .contact .menu > ul ul,
+	body > div.topSite > .contact .menu > ul li.active ul ul {
+		position: relative;
+		margin-top: 0 !important;
+	}
+	
+	body > div.topSite > .contact .menu ul ul {
+		z-index: -1;
+	}
+	
+	body > div.topSite > .contact .menu > ul li + li {
+		border-top: 1px solid #4e4e4e;
+	}
+	body > div.topSite > .contact .menu > ul ul li + li {
+		border-top: 1px solid #b31d3f;
+	}
+	body > div.topSite > .contact .menu ul li.active ul li a {
+		padding: 15px 0;
+		text-align: center;
+	}
+	
+	body > div.topSite > .contact .menu ul ul:before {
+		z-index: 100;
+	}
+
+	body > div.topSite > .contact .menu > ul > li > a:hover {
+		background: #383838;
+		color: #fbe6eb;
+	}
+	
+	/* animacja obrotu kresek menu */
+	body nav.menu.active.ekstraactive > a.mobileMenu span {		
+		background: transparent;
+	}
+
+	body nav.menu.active.ekstraactive > a.mobileMenu span:after {
+		-moz-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		margin-top: 0;
+	}
+	
+	body nav.menu.active.ekstraactive > a.mobileMenu span:before {
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+		margin-top: 0;
+	}
+	
+	body nav.menu.active > a.mobileMenu:before {
+		width: 100%;
+	}
+}
+@media all and (max-width: 883px) {
+	body > div.contactform textarea {
+    height: 222px;
+	}
+}
+@media all and (max-width: 840px) {
+	body > div.aboutus > .center .left,
+	body > div.aboutus > .center .right {
+		float: none;
+		width: 100%;
+		display: block;
+	}
+	body > div.aboutus .center .left .image {
+		min-height: 250px;
+	}
+	body > div.aboutus > .center .right h3 {
+		margin: 30px 0 15px;
+	}
+	body > div.testimonials .container p {	
+		overflow: auto;		
+		height: auto;	
+	}	
+}
+@media all and (max-width: 780px) {		
+	body > div.offer ul li {				
+		width: 49%;						
+	}
+	body > div.offer ul li:nth-child(3n+2) {
+		margin: 0;
+	}
+	body > div.contactform form > .left,
+	body > div.contactform form > .right {
+		float: none;
+		width: 100%;
+	}
+	body > div.contactform form > .right {
+		margin-top: 35px;
+	}
+	body > div.aboutus {
+		padding: 15px 0;
+	}
+	body > div.aboutus .center .left .image {
+		min-height: 200px;
+	}
+}
+@media all and (max-width: 590px) {
+	body h2.headerTopElement.redHeader:before {
+		display: none;
+	}
+	body h2.headerTopElement.redHeader:after {
+		margin: 17px auto 0px;
+		width: 56px;
+		display: block;
+	}
+	body h2.headerTopElement {
+		font-size: 26px;
+		display: block;
+	}
+}
+@media all and (max-width: 520px) {
+	body > div.offer ul {
+		border-top: 1px solid #f7dee2;
+		border-bottom: 1px solid #f7dee2;
+	}
+	body > div.offer ul li {
+		width: 100%;
+		display: block;
+		margin: 0; 
+	}
+	body > div.offer ul li + li {
+		border-top: 1px solid #f7dee2;
+	}
+	body > div.offer ul li a {
+		padding: 30px 0;
+	}
+	body > div.offer ul li a:hover {
+		background: #efefef;
+	}
+	body h2.headerTopElement.redHeader:before {
+		display: none;
+	}
+	body h2.headerTopElement.redHeader:after {
+		margin: 17px auto 0px;
+		width: 56px;
+		display: block;
+	}
+	body h2.headerTopElement {
+		font-size: 26px;
+		display: block;
+	}
+	body > div.contactform form > .left .left, 
+	body > div.contactform form > .left .right {
+		width: 90%;
+	}
+	body > div.contactform form > .left .right {
+		margin-top: 35px;
+	}
+	
+	body > div.contactform form > .right {
+		margin-top: 35px;
+	}
+	body > div.aboutus {
+		padding: 10px 0;
+	}
+	body > div.footer .center .left, 
+	body > div.footer .center .right {
+		float: none;
+		display: block;
+		text-align: center;
+		margin: 15px auto;
+	}
+	body > div.footer {
+		padding: 15px 0;
+	}
+	body > div.footer .center p {
+		font-size: 16px;
+	}
+}
+@media all and (max-width: 383px) {
+	body > div.topSite > .contact .top .item + .item {
+		border: none;
+	}
+}
+@media all and (max-width: 370px) {
+	body h2.headerTopElement:before,
+	body h2.headerTopElement:after,
+	body h2.headerTopElement.violetHeader:before,
+	body h2.headerTopElement.violetHeader:after {
+		margin: 0 20px;
+	}
+}
+
+/***********************--[ Cookies ]--***********************/
+#ciacho {
+	background: #2a2a2a;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+#ciacho span:before {
+	background: url(../images/cookies/cookies.png) no-repeat center;
+	content: "";
+	position: absolute;
+	display: inline-block;
+    width: 110px;
+    height: 110px;
+    vertical-align: middle;
+    background-size: cover;
+ 	left:-120px;
+ 	top:-45px;
+}
+
+#ciacho span {
+	position: relative;
+}
+
+#ciacho > p {
+	margin: 0;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 16px;
+}
+
+#ciacho > a {
+	margin: 0;
+	padding: 10px 0;
+	display: block;
+	text-decoration: none;
+}
+
+#ciacho > a,
+#ciacho > p { 
+	text-align: center;
+	color: #fff;
+}
+
+#ciacho > a:hover { 
+	background: #3b3b3b;
+	color: #efefef;
+}
+
+body #ciacho.active {
+	opacity: 1;
+}
+
+body #ciacho.active {
+	opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
