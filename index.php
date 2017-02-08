@@ -144,7 +144,7 @@
 			</form>
 		</div>
 	<!--************************[ About-Us ]************************-->
-		<div class="aboutus">
+		<div class=" aboutus">
 			<div class="center">
 				<div class="left">
 					<h2 class="headerTopElement alignCenter whiteHeader">O nas</h2>
@@ -161,7 +161,7 @@
 						<li>vitae viverra diam sed mauris orci,</li>
 					</ul>
 					<div class="link alignRight">
-						<a href="#aboutus-link" class="alignCenter" onClick="Tmpl.setc()"; return false>czytaj więcej </a>
+						<a href="#aboutus-link" class="alignCenter" onClick="Tmpl.setc()"; return false>czytaj więcej</a>
 					</div>
 				</div>
 			</div>
